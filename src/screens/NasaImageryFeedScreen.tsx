@@ -10,11 +10,8 @@ export const StarshipFeedScreen = () => {
       <Card style={styles.card}>
         <Card.Cover source={{ uri: 'https://picsum.photos/700' }} />
         <Card.Content>
-          <Text style={styles.title}>{item.name}</Text>
-          <Text style={styles.body}>Model : {item.model}</Text>
-          <Text style={styles.body}>Crew : {item.crew}</Text>
-          <Text style={styles.body}>Hyperdrive Rating : {item.hyperdrive_rating}</Text>
-          <Text style={styles.body}>Cost_in_credits : {item.cost_in_credits}</Text>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.body}>Model : {item.date}</Text>
         </Card.Content>
         <Card.Actions style={styles.button}>
           <Button >Buy Starship</Button>
@@ -38,7 +35,7 @@ export const StarshipFeedScreen = () => {
       <FlatList
         data={data.results}
         renderItem={StarshipRenderer}
-        keyExtractor={item => item.name}
+        keyExtractor={item => item.title}
       />
     );
   };
